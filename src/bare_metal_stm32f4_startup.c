@@ -103,7 +103,7 @@ uint32_t isr_vector[] __attribute__((section(".isr_vector"))) = {
 };
 
 void default_handler(){
-    while(1);
+   while(1);
 }
 
 void reset_handler(){
