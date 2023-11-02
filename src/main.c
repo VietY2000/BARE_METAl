@@ -10,16 +10,17 @@ int main(void){
     delay_ms(100);
     /* cấu hình cho chân GPIOD là output */
     *pGPIODModeReg |= (1 << 30);
+
     delay_ms(100);
     /*tắt led*/
     led_off(15);
 
-
     while(1){
         led_on(15);
-        delay_ms(5000);
+        delay_ms(1000);
         led_off(15);
         delay_ms(1000);
+        
     }
     return 0;
 }
