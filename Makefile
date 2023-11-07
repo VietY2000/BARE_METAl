@@ -7,7 +7,7 @@ INCLUDE_DIR := ./inc
 SOURCE_FILE := $(foreach SOURCE_DIR, $(SOURCE_DIR), $(wildcard $(SOURCE_DIR)/*))
 INCLUDE_FILE := $(foreach INCLUDE_DIR, $(INCLUDE_DIR), $(wildcard $(INCLUDE_DIR)/*))
 
-COMPILER_DIR := $(HOME)/Tool/GNU_ARM/bin/
+COMPILER_DIR := C:/GNU_ARM/Tool/bin
 FLASH_DIR := $(HOME)/Tool/stlink/build/Release/bin
 CC := $(COMPILER_DIR)/arm-none-eabi-gcc
 
