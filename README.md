@@ -59,5 +59,9 @@
     bị cho chúng ta 4 con led để có thể lập trình. Ở đây chúng ta sẽ dùng led màu xanh trên VĐK 
     được điều khiển bằng PORTD15. Để sử dụng PORTD ta phải enable clock cho PORTD và ở đây thanh 
     ghi. Thanh ghi để điều khiển PORTD là thanh ghi RCC_AHB1 và 2 thanh ghi để điều khiển led là
+    GPIODModeReg dùng để cấu hình mode cho PORTD15 và thanh ghi GPIODDataReg để set đầu ra là mức
+    thấp hay mức cao cho PORTD15.
+
+    /* chèn hình các thanh ghi */
 
 

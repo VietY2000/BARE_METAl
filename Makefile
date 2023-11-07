@@ -43,4 +43,4 @@ flash:
 	@echo -----------------------------flash OK-----------------------------
 
 clean:
-	rm -rf $(PATH_OUTPUT)
+	rm -rf $(PATH_OUTPUT) 
