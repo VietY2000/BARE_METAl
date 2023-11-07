@@ -58,11 +58,6 @@
     Tiếp theo ta sẽ viết code hàm main để chạy ứng dụng. Trên VĐK STM32F4xx nhà sản xuất đã trang
     bị cho chúng ta 4 con led để có thể lập trình. Ở đây chúng ta sẽ dùng led màu xanh trên VĐK 
     được điều khiển bằng PORTD15. Để sử dụng PORTD ta phải enable clock cho PORTD và ở đây thanh 
-    ghi
-
-
-
-
-
+    ghi. Thanh ghi để điều khiển PORTD là thanh ghi RCC_AHB1 và 2 thanh ghi để điều khiển led là
 
 

@@ -8,13 +8,13 @@ SOURCE_FILE := $(foreach SOURCE_DIR, $(SOURCE_DIR), $(wildcard $(SOURCE_DIR)/*))
 INCLUDE_FILE := $(foreach INCLUDE_DIR, $(INCLUDE_DIR), $(wildcard $(INCLUDE_DIR)/*))
 
 COMPILER_DIR := C:/GNU_ARM/Tool/bin
-FLASH_DIR := $(HOME)/Tool/stlink/build/Release/bin
+FLASH_DIR := C:/STM32_Tool/bin
 CC := $(COMPILER_DIR)/arm-none-eabi-gcc
 
 LD := $(COMPILER_DIR)/arm-none-eabi-ld
 OBJCOPY := $(COMPILER_DIR)/arm-none-eabi-objcopy
 LINKER_FILE := $(PRO_DIR)/linker/bare_metal_stm32f4.ld
-FL := $(FLASH_DIR)/st-flash
+FL := $(FLASH_DIR)/STM32_Programmer_CLI.exe
 
 INCLUDE_DIR_OPT := $(foreach INCLUDE_DIR, $(INCLUDE_DIR), -I$(INCLUDE_DIR))
 
@@ -39,7 +39,7 @@ build: $(OBJ_FILE) $(LINKER_FILE)
 	$(CC) $(CFLAG) $< -o $(PATH_OUTPUT)/$@
 
 flash: 
-	$(FL) write $(PATH_OUTPUT)/$(PROJ_NAME).bin 0x800000
+	$(FL) -c port=SWD -w "$(PATH_OUTPUT)/$(PROJ_NAME).hex" 0x0800000
 	@echo -----------------------------flash OK-----------------------------
 
 clean:
