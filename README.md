@@ -87,8 +87,8 @@
 
     /* chèn ảnh build */
 
-    Sau đó hãy  gõ lệnh "make flash" để nạp chương trình vào board. Thấy dòng chữ "-----flash OK-----" là đã nạp 
-    thành công.
+    Sau đó hãy  gõ lệnh "make flash" để nạp chương trình vào board. Thấy dòng chữ "-----flash OK-----" là đã 
+    nạp thành công.
 
     /* chèn ảnh flash */
 
