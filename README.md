@@ -82,13 +82,13 @@
     COMPILER_DIR và FLASH_DIR. Lưu ý là sử dụng git pash hoặc có thể tải cywin về để gõ command line để có 
     thể chạy một số lệnh chỉ thực hiện được ở môi trường linux. Trước khi sử dụng lệnh make hãy đưa đường dẫn
     chưa file make vào trong system path để có thể gõ make mà không cần kèm theo đường dẫn. Gõ lệnh "make clean" 
-    để xóa folder bin (folder chứa file object và file thực thi). Sau đó gõ lệnh "make build" để build chương trình.
-    Sau khi build thấy có dòng chữ "-----build OK-----" hiện ra có nghĩa là đã build thành công.
+    để xóa folder bin (folder chứa file object và file thực thi). Sau đó gõ lệnh "make build" để build chương 
+    trình. Sau khi build thấy có dòng chữ "-----build OK-----" hiện ra có nghĩa là đã build thành công.
 
     /* chèn ảnh build */
 
-    Sau đó hãy  gõ lệnh "make flash" để nạp chương trình vào board. Thấy dòng chữ "-----flash OK-----" là đã nạp thành
-    công.
+    Sau đó hãy  gõ lệnh "make flash" để nạp chương trình vào board. Thấy dòng chữ "-----flash OK-----" là đã nạp 
+    thành công.
 
     /* chèn ảnh flash */
 
