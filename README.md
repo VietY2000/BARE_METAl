@@ -21,14 +21,14 @@
     Lưu ý là phải để đúng vị trí của các hàm giống như trong vector table của RM. Ở đây chúng
     ta chỉ làm một dự án chớp tắt led cơ bản nên chúng ta sẽ để tất cả các ngoại lệ hệ thống 
     và các trình sử lý ngắt thành default_handler. Trong default_handler chúng ta sẽ để một 
-    vòng lặp vô hạn( điều này là không nên đối với các dự án thực tế). 
-
-    /* chèn hình reset_handler */
-
+    vòng lặp vô hạn (điều này là không nên đối với các dự án thực tế). 
+   
     Hàm reset_handler có nhiệm vụ là hàm đầu tiên được chạy để sao chép các dữ liệu của vùng 
     .data trong bộ nhớ Flash lên Sram và chuyển các giá trị trong vùng .bss về 0 sau đó là 
     gọi hàm main chính của chương trình chạy. 
     
+    /* chèn hình reset_handler */
+
     Và làm sao để biết vùng .data và .bss bắt đầu từ đâu và kích thước như thế nào ta sẽ bước
     tiếp đến phần viết file Linker Script File để phân vùng địa chỉ trên VĐK và gộp các file 
     object lại với nhau và phân bổ bộ nhớ như người dùng mong muốn.
@@ -64,4 +64,34 @@
 
     /* chèn hình các thanh ghi */
 
+    Việc cuối cùng là viết một Makefile để build toàn bộ source code. Việc dùng Makefile để build và
+    nạp code sẽ dễ dàng build và nạp code cho các bài khác vì chúng ta chỉ cần đổi các đường dẫn của các 
+    file source trong Makefile phù hợp với đự án là chúng ta có thể sử dụng lại Makefile để build và nạp
+    code cho dự án mới.
 
+    Các tool sử dụng trong bài: 
+      - GNU Arm Embedded Toolchain
+      - GNU Make
+      - Git bash
+      - STM32CubeProg
+    
+    Tài liệu tham khảo:
+      - STM32F407 Reference Manual
+
+    Để build thử source và nạp chương trình vào mạch các bạn hãy clone source về máy sửa các đường dẫn của
+    COMPILER_DIR và FLASH_DIR. Lưu ý là sử dụng git pash hoặc có thể tải cywin về để gõ command line để có 
+    thể chạy một số lệnh chỉ thực hiện được ở môi trường linux. Trước khi sử dụng lệnh make hãy đưa đường dẫn
+    chưa file make vào trong system path để có thể gõ make mà không cần kèm theo đường dẫn. Gõ lệnh "make clean" 
+    để xóa folder bin (folder chứa file object và file thực thi). Sau đó gõ lệnh "make build" để build chương trình.
+    Sau khi build thấy có dòng chữ "-----build OK-----" hiện ra có nghĩa là đã build thành công.
+
+    /* chèn ảnh build */
+
+    Sau đó hãy  gõ lệnh "make flash" để nạp chương trình vào board. Thấy dòng chữ "-----flash OK-----" là đã nạp thành
+    công.
+
+    /* chèn ảnh flash */
+
+    Nhấn nút reset trên board để chương trình thực hiện.
+
+    /* chèn ảnh kết quả chương trình */
