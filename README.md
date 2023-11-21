@@ -11,12 +11,12 @@
     Trong startup code sẽ chứa một bảng vector chứa con trỏ SP, hàm Reset_Hander, các hàm 
     ngoại lệ hệ thống và các hàm ngắt của chương trình.
 
-![vector-table img](https://github.com/VietY2000/BARE_METAl/blob/master/doc/vector_table.PNG)
+![vector-table img](https://github.com/VietY2000/BARE_METAl/blob/linux/doc/vector_table.PNG)
 
     Bảng vector table sẽ được tìm thấy trong Reference manual của MCU. Bấm Ctrl + F và gõ
     vào nội dung vector table để tìm kiếm. Đây là hình ảnh vector table của MCU STM32F4xx. 
     
-![RM vector-table img](https://github.com/VietY2000/BARE_METAl/blob/master/doc/rm_vector_table.PNG)
+![RM vector-table img](https://github.com/VietY2000/BARE_METAl/blob/linux/doc/rm_vector_table.PNG)
 
     Lưu ý là phải để đúng vị trí của các hàm giống như trong vector table của RM. Ở đây chúng
     ta chỉ làm một dự án chớp tắt led cơ bản nên chúng ta sẽ để tất cả các ngoại lệ hệ thống 
@@ -27,7 +27,7 @@
     .data trong bộ nhớ Flash lên Sram và chuyển các giá trị trong vùng .bss về 0 sau đó là 
     gọi hàm main chính của chương trình chạy. 
     
-![reset_handler img](https://github.com/VietY2000/BARE_METAl/blob/master/doc/reset_handler.PNG)
+![reset_handler img](https://github.com/VietY2000/BARE_METAl/blob/linux/doc/reset_handler.PNG)
 
     Và làm sao để biết vùng .data và .bss bắt đầu từ đâu và kích thước như thế nào ta sẽ bước
     tiếp đến phần viết file Linker Script File để phân vùng địa chỉ trên VĐK và gộp các file 
@@ -37,19 +37,19 @@
     biết hàm nào được chạy đầu tiên (có thể có hoặc không có lệnh này). Ví dụ hay được dùng nhất
     là reset_handler.
 
-![ENTRY command img](https://github.com/VietY2000/BARE_METAl/blob/master/doc/ENTRY.PNG)
+![ENTRY command img](https://github.com/VietY2000/BARE_METAl/blob/linux/doc/ENTRY.PNG)
 
     Command MEMORY dùng để set các phân vùng bộ nhớ, bao gồm các thông tin như là địa chỉ bắt
     đầu, kích thước bao nhiêu và đặt tính là gì (đọc/ghi/thực thi,...). Các thông tin về các
     vùng nhớ này có trong RM với từ khóa "memory map".
 
 
-![MEMORY command ing](https://github.com/VietY2000/BARE_METAl/blob/master/doc/MEMORY.PNG)
+![MEMORY command ing](https://github.com/VietY2000/BARE_METAl/blob/linux/doc/MEMORY.PNG)
 
 
     Command SECTIONS để chia các thành phần trong bộ nhớ thành các sections là .text, .data .bss. 
     
-![SECTIONS command ing](https://github.com/VietY2000/BARE_METAl/blob/master/doc/SECTIONS.PNG)
+![SECTIONS command ing](https://github.com/VietY2000/BARE_METAl/blob/linux/doc/SECTIONS.PNG)
 
     Các lệnh sẽ được lưu vào vùng .text, các biến global được khởi tạo và có giá trị và các biến 
     static sẽ được lưu vào vùng .data, các biến global được khởi tạo mà không có giá trị hoặc được
@@ -62,7 +62,7 @@
     GPIODModeReg dùng để cấu hình mode cho PORTD15 và thanh ghi GPIODDataReg để set đầu ra là mức
     thấp hay mức cao cho PORTD15.
 
-![register img](https://github.com/VietY2000/BARE_METAl/blob/master/doc/register.PNG)
+![register img](https://github.com/VietY2000/BARE_METAl/blob/linux/doc/register.PNG)
 
     Việc cuối cùng là viết một Makefile để build toàn bộ source code. Việc dùng Makefile để build và
     nạp code sẽ dễ dàng build và nạp code cho các bài khác vì chúng ta chỉ cần đổi các đường dẫn của các 
@@ -85,13 +85,13 @@
     để xóa folder bin (folder chứa file object và file thực thi). Sau đó gõ lệnh "make build" để build chương 
     trình. Sau khi build thấy có dòng chữ "-----build OK-----" hiện ra có nghĩa là đã build thành công.
 
-![build img](https://github.com/VietY2000/BARE_METAl/blob/master/doc/build.PNG)
+![build img](https://github.com/VietY2000/BARE_METAl/blob/linux/doc/build.PNG)
 
     Sau đó hãy  gõ lệnh "make flash" để nạp chương trình vào board. Thấy dòng chữ "-----flash OK-----" là đã 
     nạp thành công.
 
-![flash img](https://github.com/VietY2000/BARE_METAl/blob/master/doc/flash.PNG)
+![flash img](https://github.com/VietY2000/BARE_METAl/blob/linux/doc/flash.PNG)
 
     Nhấn nút reset trên board để chương trình thực hiện.
 
-![run gif](https://github.com/VietY2000/BARE_METAl/blob/master/doc/run.gif)
+![run gif](https://github.com/VietY2000/BARE_METAl/blob/linux/doc/run.gif)
