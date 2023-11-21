@@ -19,7 +19,7 @@ int main(void);
 /* system interrupt */
 void default_handler(void);
 void reset_handler(void);
-
+void EXTI0_IRQHandler(void) __attribute__ ((weak, alias("default_handler")));
 
 /* vector table xem trong reference manual */
 uint32_t isr_vector[] __attribute__((section(".isr_vector"))) = {
@@ -45,7 +45,7 @@ uint32_t isr_vector[] __attribute__((section(".isr_vector"))) = {
     (uint32_t)default_handler,                    // The EXTI22 / RTC_WKUP handler
     (uint32_t)default_handler,                    // The FLASH 
     (uint32_t)default_handler,                    // The RCC  
-    (uint32_t)default_handler,                    // The EXTI0 
+    (uint32_t)EXTI0_IRQHandler,                   // The EXTI0 
 
     (uint32_t)default_handler,                    // The EXTI1 
     (uint32_t)default_handler,                    // The EXTI2 
